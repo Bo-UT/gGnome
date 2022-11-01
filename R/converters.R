@@ -934,7 +934,10 @@ read.juncs = function(rafile,
             f = file(ra.path, open = "rb")
             headers = character(0)
             thisline = readLines(f, 1)
-            while (grepl("^((#)|(chrom)|(chr))", thisline)) {
+            while(length(thisline)!=0){
+                if (!(grepl("^((#)|(chrom)|(chr))", thisline))){
+                  break
+                }
                 headers = c(headers, thisline)
                 thisline = readLines(f, 1)
             }
