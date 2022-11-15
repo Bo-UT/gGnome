@@ -979,7 +979,7 @@ cov2cov.js = function(cov, meta.js = NULL, js.type = 'gGnome.js', field = 'ratio
     }
 
     cn.converted = FALSE
-    if (!all(is.na(gg))) & convert.to.cn == TRUE){
+    if (!all(is.na(gg))) & convert.to.cn == TRUE){ # Bo: add all()
         tryCatch({
             purity = gg$meta$purity
             ploidy = gg$meta$ploidy
