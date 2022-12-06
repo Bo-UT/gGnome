@@ -7554,17 +7554,8 @@ gWalk = R6::R6Class("gWalk", ## GWALKS
                         }                        
                         out = cbind(out, node.sum)
                         
-                        # separate to debug
                         if (nrow(private$pedge)>0)
-                        {
-                          tmp_dt1 = private$pedge[.(ix), .(sedge.id = list(c(sedge.id))), keyby = walk.id]
-                          print(tmp_dt1)
-                          tmp_dt2 = tmp_dt1[.(ix),]
-                          print(tmp_dt2)
-                          tmp_dt3 = tmp_dt2[, -1]
-                          print(tmp_dt3)
-                          out = cbind(out, tmp_dt3)
-                         }
+                          out = cbind(out, private$pedge[.(ix), .(sedge.id = list(c(sedge.id))), keyby = walk.id][.(ix),][, -1])
                         return(out)
                       },
                       
