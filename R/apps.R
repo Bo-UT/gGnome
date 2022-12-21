@@ -1878,8 +1878,8 @@ peel = function(gg, field = NULL, embed.loops = FALSE, verbose = FALSE, cache.pa
         message('... remaining ploidy ', round(ploidy,2), ' across ', sum(gg$nodes$dt$cn>0, na.rm = TRUE), ' nodes and ', sum(gg$edges$dt$cn>0), ' edges with nonzero CN remaining in graph with total ', length(out), ' walks in collection')
       }
     # Bo edited
-    # break the loop if sum(gg$edges$dt$cn>0) == 0
-    if (sum(gg$edges$dt$cn>0) == 0) break
+    # break the loop if sum(gg$edges$dt$cn>0) == 0 or sum(gg$nodes$dt$cn>0) == 0
+    if ((sum(gg$edges$dt$cn>0) == 0)|(sum(gg$nodes$dt$cn>0) == 0)) break
   }
 
   if (!is.null(cache.path))
