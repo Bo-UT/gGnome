@@ -7820,6 +7820,8 @@ gWalk = R6::R6Class("gWalk", ## GWALKS
                         }
 
                         sedu = dunlist(self$sedge.id)
+                        print("#############")
+                        print(sedu)
                         cids = lapply(unname(split(cbind(data.table(cid = sedu$V1,
                                                        source = self$graph$edges[sedu$V1]$left$dt$snode.id,
                                                        sink = -self$graph$edges[sedu$V1]$right$dt$snode.id, # notice that we need to add negative sign here to meet the gGnome.js expectations
