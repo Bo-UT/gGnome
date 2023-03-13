@@ -7862,8 +7862,8 @@ gWalk = R6::R6Class("gWalk", ## GWALKS
                             print(cids)
                           c(as.list(pids[[x]]),
                             list(cids = rbindlist(cids[[x]])),
-                            list(iids = rbindlist(iids[[x]]))))
-                            }
+                            list(iids = rbindlist(iids[[x]])))})
+                            
 
                         if (include.graph){
                             out = c(graph.js, list(walks = walks.js))
