@@ -7857,12 +7857,14 @@ gWalk = R6::R6Class("gWalk", ## GWALKS
                           self$graph$nodes[snu$V1]$dt[,..nfields]), snu$listid)),
                           function(x) unname(split(x, 1:nrow(x))))
                         # to debug
-                        walks.js = lapply(1:length(self), function(x){
-                            print(x)
-                            print(cids)
+                        print("#############")
+                        print(cids)
+                        print(length(self))
+                                      
+                        walks.js = lapply(1:length(self), function(x)
                           c(as.list(pids[[x]]),
                             list(cids = rbindlist(cids[[x]])),
-                            list(iids = rbindlist(iids[[x]])))})
+                            list(iids = rbindlist(iids[[x]]))))
                             
 
                         if (include.graph){
