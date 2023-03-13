@@ -1451,10 +1451,10 @@ draw.paths.y = function(grl, path.stack.x.gap=0, path.stack.y.gap=1){
 
     contig.lim = data.frame(
         # Add `formula` named argument, Bo
-        group = names(vaggregate(formula = as.formula(paste("y.relbin", "group", sep = "~")), data = grl.segs, FUN = max)),
-        pos1  = vaggregate(formula = as.formula(paste("pos1", "group", sep = "~")), data = grl.segs, FUN = min),
-        pos2  = vaggregate(formula = as.formula(paste("pos2", "group", sep = "~")), data = grl.segs, FUN = max),
-        height = vaggregate(formula = as.formula(paste("y.relbin", "group", sep = "~")), data = grl.segs, FUN = max)
+        group = names(vaggregate(y.relbin ~ group, data = grl.segs, FUN = max)),
+        pos1  = vaggregate(pos1 ~ group, data = grl.segs, FUN = min),
+        pos2  = vaggregate(pos2 ~ group, data = grl.segs, FUN = max),
+        height = vaggregate(y.relbin ~ group, data = grl.segs, FUN = max)
     );
     contig.lim$width = contig.lim$pos2 - contig.lim$pos1
     contig.lim$y.bin = 0;
