@@ -7830,10 +7830,6 @@ gWalk = R6::R6Class("gWalk", ## GWALKS
                                                    self$graph$edges[sedu$V1]$dt[, ..efields]
                                                  ), sedu$listid)),
                                       function(x) unname(split(x, 1:nrow(x))))
-                        # to debug
-                        print("#############")
-                        print(cids)
-                        print(length(self))
                                       
                         snu = dunlist(self$snode.id)
                         snu$ys = gGnome:::draw.paths.y(self$grl) %>% unlist
